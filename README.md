@@ -12,11 +12,11 @@ L'analyse effectuer par le script inclut celles sur les types de systèmes de fi
 
 ## Requierment
 
-* python3
-* module suprocess
-* module colorama
-* module textwrap
-* module fpdf
+  * python3
+  * module suprocess
+  * module colorama
+  * module textwrap
+  * module fpdf
 
 ## Clone the repository
 
