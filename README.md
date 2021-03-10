@@ -6,7 +6,7 @@ Ce référentiel contient le code du projet mais pas que, il permet de remonter 
 
 ## The script
 
-CheckPoint.py est un code qui permet d'analyser selon les recommandation du du CIS certains point de configuraton sur les systèmes Linux  en x86 et x64 et de fournir des conseils normatifs pour l'établissement d'une configuration sécurisée. 
+CheckPoint.py est un code qui permet d'analyser selon les recommandation du du [CIS][1] certains point de configuraton sur les systèmes Linux  en x86 et x64 et de fournir des conseils normatifs pour l'établissement d'une configuration sécurisée. 
 
 L'analyse effectuer par le script inclut celles sur les types de systèmes de fichier, des services, des clients et des protocols réseau. Afin depermettre un test efficace et des sorties en corélation avec l'état du système analysé, ce script doit être lancé sous l'utilisateur root >> root@machine~# et non pas avec sudo python3 CheckPoint.py .
 
@@ -37,3 +37,4 @@ $ root@xxx:/homa/user/projetAIC# python3 CheckPoint.py
 ```
 
 
+[1]: https://www.cisecurity.org/
