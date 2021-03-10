@@ -1,4 +1,4 @@
-# Projet AIC - Analyse des récommandations du CIS
+# Projet AIC - Analyse des recommandations du CIS
 
 ## The repository 
 
