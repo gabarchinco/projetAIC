@@ -2,7 +2,7 @@
 
 ## The repository 
 
-Ce référentiel contient le code du projet mais pas que, il permet de remonter les différents problèmes liés au fonctionnement du code et  d'y contribuer. Depuis cet espace, nous publiuons les différents plans d'évolution et des axes d'améliorations. Ce code est entièrement sous Licence Apache 2.0.
+Ce référentiel contient le code du projet mais pas que, il permet de remonter les différents problèmes liés au fonctionnement du code et également d'y contribuer. Depuis cet espace, nous publiions les différents plans d'évolution et des axes d'améliorations. Ce code est entièrement sous Licence Apache 2.0.
 
 ## The script
 
