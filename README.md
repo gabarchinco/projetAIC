@@ -10,7 +10,7 @@ Le [CIS][1] est le Center pour la Sécurité d’Internet. Son objectif est de f
 
 C’est une organisation à but non lucratif dirigée par une communauté qui s’occupe du [CIS][1] Controls® et du [CIS][1] Benchmarks ™, qui met en place des pratiques et des normes mondialement reconnues pour la sécurisation des systèmes et des données informatiques. Le [CIS][1] dirige une communauté mondiale de professionnels de l'informatique pour faire évoluer en permanence ces normes standardisées et fournir des produits et services pour se protéger de manière proactive contre les menaces émergentes. Le [CIS][1] Hardened Images® fournissent des environnements informatiques sécurisés, à la demande et évolutifs dans le cloud.
 
-Le [CIS][1] abrite plusieurs centre dont le Multi-State Information Sharing and Analysis Center® (MS-ISAC®) et le Elections Infrastructure Information Sharing and Analysis Center® (EI-ISAC®), qui prend en charge l'évolution rapide des besoins en matière de cybersécurité des bureaux électoraux américains.
+Le [CIS][1] abrite plusieurs centres dont le [Multi-State Information Sharing and Analysis Center® (MS-ISAC®)][2] et le [Elections Infrastructure Information Sharing and Analysis Center® (EI-ISAC®)][3], qui prend en charge l'évolution rapide des besoins en matière de cybersécurité des bureaux électoraux américains.
 
 ## The script
 
@@ -46,3 +46,5 @@ $ root@xxx:/homa/user/projetAIC# python3 CheckPoint.py
 
 
 [1]: https://www.cisecurity.org/
+[2]: https://www.cisecurity.org/ms-isac/
+[3]: https://www.cisecurity.org/ei-isac/
