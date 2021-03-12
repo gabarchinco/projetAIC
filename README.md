@@ -30,7 +30,7 @@ Ce script est codé en python, sa présence est donc pré-requis afin de pouvoir
 
 ## Clone the repository
 
-Pour utiliser ce script vous pouvez le clonner avec les commandes suivantes.
+Pour utiliser ce script vous pouvez le cloner avec les commandes suivantes.
 
 ```bash
 $ cd ~/home/user

@@ -17,7 +17,7 @@ rep__pycache__ = "__pycache__"
 ### Context d'application 
 context = "Context"
 first_page = '''Ce rapport est automatiquement généré suite aux lancement du script CheckPoint.py . Ce script est conçu selon les recommandation du CIS afin de réaliser un ensemble de test de sécurité sur les systèmes Linux x86 et x64 afin de fournir des conseils normatifs pour l'établissement d'une configuration sécurisée.
-
+    
 Plusieurs points de contrôle sont effectués notamment sur les systèmes de fichier, des services, des clients et des protocoles réseau. Chaque point de contrôle fournit un ou plusieurs résultat en fonction de la configuration du systèmes sur lequel est réalisé ce test. 
 
 Les rubrique de test sont composé d'un titre de rubrique en rapport avec le test effectué pour plus de cohérence, du résultat de test et des recommandations de paramétrages ou de configurations à mettre en place pour sécuriser votre configuration.
