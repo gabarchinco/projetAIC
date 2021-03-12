@@ -58,7 +58,7 @@ def ajouterAurapport(textajouter):
 def verif_sys_fichier(point_test):
     for elem in point_test:
         elem_upper = elem.upper()
-        output = subprocess.check_output(["modprobe", "-n", "-v", elem]).decode(sys.stdout.encoding).strip()
+        output = os.popen(r'modprobe -n -v').read()
         # nous vérifions si le module est désactivé.
         if "install /bin/true" in output:   
             textajouter = c.titre_rub_file_sys + elem + "\n"
