@@ -20,7 +20,7 @@ L'analyse effectué par le script inclut celles sur les types de systèmes de fi
 
 ## Requierment
 
-Ce script est codé en python, sa présence est donc pré-requis afin de pouvoir utiliser ce programme. 
+Ce script est codé en python, sa présence est donc prérequis afin de pouvoir utiliser ce programme. 
 
   * python3
   * module suprocess
