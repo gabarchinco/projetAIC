@@ -4,6 +4,7 @@ import os
 import os.path
 import subprocess
 import sys
+import shutil
 
 
 from colorama import Fore
@@ -18,8 +19,12 @@ import const as c
 ################### Ecriture de fichier temporaires ###################
 
 def ecrireFichier(fichieraecrire):
-    with open(c.fichierContenu, "w") as f:
-        f.write(fichieraecrire)
+    try:
+        with open(c.fichierContenu, "w") as f:
+            f.write(fichieraecrire)
+    except FileNotFoundError:
+        print("Erreur : Le fichier contenu.txt n'a pas été généré")
+        raise
 
 ################### Suppression de fichier temporaires ################
 
@@ -30,6 +35,16 @@ def suppressionFichier(fichierasuppr):
     if os.path.exists(fichierasuppr):
         os.remove(fichierasuppr)
         print("Les fichiers temporaires du processus ont été supprimés")
+
+################### Suppression de répertoires temporaires ################
+
+def suppressionDir(dirasuppr):
+    # Suppression des fichiers temporaires
+    print(f"[+] Suppression des fichiers temporaires")
+    print("-------------------------------------------")
+    if os.path.isdir(dirasuppr):
+        shutil.rmtree(dirasuppr)
+        print("Les répertoires temporaires du processus ont été supprimés")
 
 ################### Générer le rapport en fichier txt #################
 
@@ -84,7 +99,7 @@ def verif_sys_vfat(point_test_vfat):
             print(c.point)
             print()
             # nous vérifions si le module est désactivé.
-            print(f"\t {c.com_rub_vfat0}{elem} \t \t \t \t \t {Style.BRIGHT} [ {Fore.WHITE}{elem_upper} OK{Style.RESET_ALL}{Style.BRIGHT} ]{Style.RESET_ALL}")
+            print(f"\t {c.com_rub_vfat0}{elem} \t \t \t {Style.BRIGHT} [ {Fore.WHITE}{elem_upper} OK{Style.RESET_ALL}{Style.BRIGHT} ]{Style.RESET_ALL}")
         else:
             textajouter = c.titre_rub_vfat + elem + "\n"
             ajouterAurapport(textajouter)
@@ -95,7 +110,7 @@ def verif_sys_vfat(point_test_vfat):
             print(c.titre_rub_vfat + elem)
             print(c.point)
             print()
-            print(f"\t {c.com_rub_vfat1}{elem} \t \t \t \t \t {Style.BRIGHT} [ {Fore.RED}{elem_upper} EXPOSE{Style.RESET_ALL}{Style.BRIGHT} ]{Style.RESET_ALL}")
+            print(f"\t {c.com_rub_vfat1}{elem} \t \t \t {Style.BRIGHT} [ {Fore.RED}{elem_upper} EXPOSE{Style.RESET_ALL}{Style.BRIGHT} ]{Style.RESET_ALL}")
 
 ## Vérifier que le montage de certains répertoire aient les bonne options de montage.
 def test_vardir(point_test_vardir):
@@ -368,3 +383,4 @@ pdf_gen.generatepdf()
 ## Supprimer les fichier temporaires
 suppressionFichier(c.fichierContenu)
 suppressionFichier(c.fichierRapport)
+suppressionDir(c.rep__pycache__)
