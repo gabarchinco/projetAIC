@@ -80,25 +80,22 @@ uderline_description = "-----------------"
 description_cramfs = """Le système de fichiers cramfs est un système de fichiers Linux compressé en lecture seule intégré dans de petits systèmes d'empreinte. Une image cramfs peut être utilisée sans avoir à décompresser au préalable l'image.
 """ 
 
-description_freevxfs = """Le système de fichiers cramfs est un système de fichiers Linux compressé en lecture seule intégré dans de petits systèmes d'empreinte. Une image cramfs peut être utilisée sans avoir à décompresser au préalable l'image.
+description_freevxfs = """Le type de système de fichiers freevxfs est une version gratuite du système de fichiers de type Veritas. Il s'agit du type de système de fichiers principal pour les systèmes d'exploitation HP-UX.
 """ 
 
-description_jffs2 = """
-
-"""
-description_hfs = """
-
-"""
-description_hfsplus = """
-
+description_jffs2 = """Le type de système de fichiers jffs2 (système de fichiers flash journalisé 2) est un système de fichiers de journalisation structuré utilisé dans les périphériques de mémoire flash.
 """
 
-description_udf = """
-
+description_hfs = """Le type de système de fichiers hfs est un système de fichiers hiérarchique qui vous permet de monter des systèmes de fichiers Mac OS.
 """
 
-description_squashfs = """
+description_hfsplus = """Le type de système de fichiers hfsplus est un système de fichiers hiérarchique conçu pour remplacer hfs qui vous permet de monter des systèmes de fichiers Mac OS.
+"""
 
+description_udf = """Le type de système de fichiers udf est le format de disque universel utilisé pour implémenter les spécifications ISO / CEI 13346 et ECMA-167. Il s'agit d'un type de système de fichiers de fournisseur ouvert pour le stockage de données sur une large gamme de supports. Ce type de système de fichiers est nécessaire pour prendre en charge l'écriture de DVD et les nouveaux formats de disque optique.
+"""
+
+description_squashfs = """Le type de système de fichiers squashfs est un système de fichiers Linux compressé en lecture seule intégré dans des systèmes à faible encombrement (similaire à cramfs). Une image squashfs peut être utilisée sans avoir à décompresser l'image au préalable.
 """
 
 ### Récommandations sur les tests
