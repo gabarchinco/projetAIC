@@ -52,19 +52,85 @@ def ajouterAurapport(textajouter):
     with open(c.fichierRapport, "a") as f:
         f.write(textajouter)
 
+### Ajout description
+
+def ajout_description(elem):
+    if elem == "cramfs":
+        description = c.description_cramfs
+        textajouter = c.titre_description
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_description + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = description
+        ajouterAurapport(textajouter + "\n")
+    elif elem == "freevxfs":
+        description = c.description_freevxfs
+        textajouter = c.titre_description
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_description + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = description
+        ajouterAurapport(textajouter + "\n")
+    elif elem == "jffs2":
+        description = c.description_jffs2
+        textajouter = c.titre_description
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_description + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = description
+        ajouterAurapport(textajouter + "\n")
+    elif elem == "hfs":
+        description = c.description_hfs
+        textajouter = c.titre_description
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_description + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = description
+        ajouterAurapport(textajouter + "\n")
+    elif elem == "hfsplus":
+        description = c.description_hfsplus
+        textajouter = c.titre_description
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_description + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = description
+        ajouterAurapport(textajouter + "\n")
+    elif elem == "udf":
+        description = c.description_udf
+        textajouter = c.titre_description
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_description + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = description
+        ajouterAurapport(textajouter + "\n")
+    elif elem == "squashfs":
+        description = c.description_squashfs
+        textajouter = c.titre_description
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_description + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = description
+        ajouterAurapport(textajouter + "\n")
+
 ########### Processus de réalisation des différnts tests sur le vardir ##########
 
 ## Vérifier que le montage des systèmes de fichier non utilisés soit désactivé.
 def verif_sys_fichier(point_test):
     for elem in point_test:
         elem_upper = elem.upper()
-        output = os.popen(r'modprobe -n -v').read()
+        try:
+            output = os.popen("modprobe -n -v " + elem).read()
+        except:
+            print("Le module n'est pas installé")
         # nous vérifions si le module est désactivé.
         if "install /bin/true" in output:   
             textajouter = c.titre_rub_file_sys + elem + "\n"
             ajouterAurapport(textajouter)
             textajouter = c.point + "\n \n"
             ajouterAurapport(textajouter)
+
+            ajout_description(elem)
+
             textajouter = "\t" + c.com_rub_file_sys0 + elem + "\n"
             ajouterAurapport(textajouter)
             print(c.titre_rub_file_sys + elem )
@@ -76,6 +142,10 @@ def verif_sys_fichier(point_test):
             ajouterAurapport(textajouter)
             textajouter = c.point + "\n \n"
             ajouterAurapport(textajouter)
+
+            ajout_description(elem)
+
+           
             textajouter = "\t" + c.com_rub_file_sys2 + elem + "\n"
             ajouterAurapport(textajouter)
             print(c.titre_rub_file_sys + elem )

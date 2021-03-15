@@ -16,13 +16,17 @@ rep__pycache__ = "__pycache__"
 
 ### Context d'application 
 context = "Context"
-first_page = '''Ce rapport est automatiquement généré suite aux lancement du script CheckPoint.py . Ce script est conçu selon les recommandation du CIS afin de réaliser un ensemble de test de sécurité sur les systèmes Linux x86 et x64 afin de fournir des conseils normatifs pour l'établissement d'une configuration sécurisée.
+first_page = '''Ce rapport d'audit est automatiquement généré suite au lancement du programme CheckPoint.py . Il est conçu afin d'aider à la mise en place de configuration sécurisé respectant au mieux les recommandations du CIS. 
 
-Plusieurs points de contrôle sont effectués notamment sur les systèmes de fichier, des services, des clients et des protocoles réseau. Chaque point de contrôle fournit un ou plusieurs résultat en fonction de la configuration du systèmes sur lequel est réalisé ce test. 
+Pour ce faire, le programme CheckPoint.py permet la réalisation d'un ensemble de test de sécurité sur les systèmes Linux en x86 et x64 afin de fournir des conseils normatifs pour l'établissement d'une configuration sécurisée.
 
-Les rubrique de test sont composé d'un titre de rubrique en rapport avec le test effectué pour plus de cohérence, du résultat de test et des recommandations de paramétrages ou de configurations à mettre en place pour sécuriser votre configuration.
+Plusieurs points de contrôle sont effectués notamment sur les systèmes de fichier, des services, des clients et des protocoles réseau. Chaque point de contrôle fournit un ou plusieurs résultat en fonction de la configuration du système sur lequel ce test est réalisé. 
 
-Les résultats des test doivent être analysés dans le contexte global de votre système et de la politique de sécurité mise en place par votre entité. Ensuite, il doivent être analyser par point de référencement afin d'appliquer les recommandations de sécurité.
+Les rubriques des tests sont composés de trois sections : le test réalisé, les résultats de test et en fin les recommandations. 
+
+Le test réalisé est indiqué par un titre commençant par l'indication [+]. Il est assez évocateur pour plus de lisibilité. Les résultats de test, quant à eux, sont les interprétations des retours des processus de test opéré sur l'état d'un ou de plusieurs points de test. Enfin , les recommandations, comme leur nom l'indique, elles constituent les propositions de remédiations aux résultats différents de ceux du CIS.
+
+Toutefois, les résultats des tests doivent être analysés dans le contexte global de votre système et de la politique de sécurité mise en place par votre entité. Ensuite, il doivent être analyser par point de référencement afin d'appliquer les recommandations de sécurité qui sont nécéssaires aux exigences de votre environne
 '''
 
 ### Titre des rubriques des différents tests
@@ -69,4 +73,35 @@ com_rub_bootloader_pass0 = "Test réussi sur la configuration du mot de passe bo
 com_rub_bootloader_pass1 = "Il y a un risque potentiel sur la configuration du mot de passe bootloader "
 com_rub_bootloader_pass_rec = ""
 
+### Descriptions
+titre_description = "Description \n"
+uderline_description = "-----------------"
+
+description_cramfs = """Le système de fichiers cramfs est un système de fichiers Linux compressé en lecture seule intégré dans de petits systèmes d'empreinte. Une image cramfs peut être utilisée sans avoir à décompresser au préalable l'image.
+""" 
+
+description_freevxfs = """Le système de fichiers cramfs est un système de fichiers Linux compressé en lecture seule intégré dans de petits systèmes d'empreinte. Une image cramfs peut être utilisée sans avoir à décompresser au préalable l'image.
+""" 
+
+description_jffs2 = """
+
+"""
+description_hfs = """
+
+"""
+description_hfsplus = """
+
+"""
+
+description_udf = """
+
+"""
+
+description_squashfs = """
+
+"""
+
 ### Récommandations sur les tests
+com_rub_file_sys_rec = """
+
+"""

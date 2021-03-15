@@ -71,11 +71,13 @@ def generatepdf():
     for x in f:
         if "[+]" in x or ("---") in x:
             pdf.set_left_margin(10)
-            pdf.cell(200, 5, txt = x, ln = 1, align = 'L') 
+            pdf.set_right_margin(10)
+            pdf.cell(190, 5, txt = x, ln = 1, align = 'L') 
         else:
             pdf.set_left_margin(10)
+            pdf.set_right_margin(10)
             pdf.set_x(10)
-            pdf.multi_cell(200, 5, txt = x, align = 'L') 
+            pdf.multi_cell(190, 5, txt = x, align = 'L') 
 
     ### Générer le rapport des tests en pdf
     pdf.output(pdfcons.fileName) 
