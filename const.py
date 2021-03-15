@@ -22,7 +22,7 @@ Pour ce faire, le programme CheckPoint.py permet la réalisation d'un ensemble d
 
 Plusieurs points de contrôle sont effectués notamment sur les systèmes de fichier, des services, des clients et des protocoles réseau. Chaque point de contrôle fournit un ou plusieurs résultat en fonction de la configuration du système sur lequel ce test est réalisé. 
 
-Les rubriques des tests sont composés de trois sections : le test réalisé, les résultats de test et en fin les recommandations. 
+Les rubriques des tests sont composés de quatres sections : le test réalisé, la description, les résultats de test et en fin les recommandations. 
 
 Le test réalisé est indiqué par un titre commençant par l'indication [+]. Il est assez évocateur pour plus de lisibilité. Les résultats de test, quant à eux, sont les interprétations des retours des processus de test opéré sur l'état d'un ou de plusieurs points de test. Enfin , les recommandations, comme leur nom l'indique, elles constituent les propositions de remédiations aux résultats différents de ceux du CIS.
 
@@ -43,10 +43,11 @@ titre_rub_auth_single_user_mode = "\n [+] Test de l'authentification du mode sin
 titre_remediation = "\n [+] Remédiation pour "
 titre_rub_dev_shm = "\n [+] Test des options sur /dev/shm."
 titre_rub_bootloader_pass = "\n [+] Test sur la configuration du mot de passe bootloader "
-point = "--------------------------------------------------------"
+point = "######################################################"
 
 ### Résultats des tests
-
+titre_result_test = "Résultat de test"
+uderline_result = "--------------------"
 com_rub_file_sys0 = "Test réussi sur le système de fichier "
 com_rub_file_sys1 = "Test réussi sur les options de montage de "
 com_rub_file_sys2 = "Risque potentiel sur le système de fichier "

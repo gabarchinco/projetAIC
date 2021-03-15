@@ -52,7 +52,7 @@ def ajouterAurapport(textajouter):
     with open(c.fichierRapport, "a") as f:
         f.write(textajouter)
 
-### Ajout description
+################### Ajout description ###################
 
 def ajout_description(elem):
     if elem == "cramfs":
@@ -128,9 +128,11 @@ def verif_sys_fichier(point_test):
             ajouterAurapport(textajouter)
             textajouter = c.point + "\n \n"
             ajouterAurapport(textajouter)
-
             ajout_description(elem)
-
+            textajouter = c.titre_result_test + "\n"
+            ajouterAurapport(textajouter)
+            textajouter = c.uderline_result + "\n"
+            ajouterAurapport(textajouter)
             textajouter = "\t" + c.com_rub_file_sys0 + elem + "\n"
             ajouterAurapport(textajouter)
             print(c.titre_rub_file_sys + elem )
@@ -142,10 +144,11 @@ def verif_sys_fichier(point_test):
             ajouterAurapport(textajouter)
             textajouter = c.point + "\n \n"
             ajouterAurapport(textajouter)
-
             ajout_description(elem)
-
-           
+            textajouter = c.titre_result_test + "\n"
+            ajouterAurapport(textajouter)
+            textajouter = c.uderline_result + "\n"
+            ajouterAurapport(textajouter)
             textajouter = "\t" + c.com_rub_file_sys2 + elem + "\n"
             ajouterAurapport(textajouter)
             print(c.titre_rub_file_sys + elem )
