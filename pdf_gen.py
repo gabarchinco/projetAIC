@@ -59,11 +59,12 @@ def generatepdf():
     pdf.ln(250)
 
 
-    pdf.set_font("Arial", size = 12) 
+    pdf.set_font("Arial", "B", size = 12) 
     pdf.set_left_margin(10)
     pdf.set_right_margin(10)
     pdf.cell(190, 5, txt = c.context.upper(), ln = 1, align = 'L') 
     pdf.ln(5)
+    pdf.set_font("Arial", size = 12) 
     pdf.multi_cell(w=190, h=5, txt = c.first_page, align = 'J')
     pdf.ln(220)
     # Insérer le texte dans le doument pdf 

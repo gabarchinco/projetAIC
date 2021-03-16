@@ -1,16 +1,13 @@
 ### Importer les modules nécessaires
 
 import os
-import os.path
+# import os.path
 import subprocess
 import sys
 import shutil
 
-
 from colorama import Fore
 from colorama import Style
-# from reportlab.pdfgen import canvas
-# from reportlab.lib import colors
 from textwrap import wrap
 
 import const as c
@@ -111,6 +108,62 @@ def ajout_description(elem):
         ajouterAurapport(textajouter)
         textajouter = description
         ajouterAurapport(textajouter + "\n")
+    elif elem == "vfat":
+        description = c.description_vfat
+        textajouter = c.titre_description
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_description + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = description
+        ajouterAurapport(textajouter + "\n")
+    elif elem == "/tmp":
+        description = c.description_tmp
+        textajouter = c.titre_description
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_description + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = description
+        ajouterAurapport(textajouter + "\n")    
+    elif elem == "/var":
+        description = c.description_var
+        textajouter = c.titre_description
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_description + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = description
+        ajouterAurapport(textajouter + "\n") 
+    elif elem == "/var/tmp":
+        description = c.description_vartmp
+        textajouter = c.titre_description
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_description + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = description
+        ajouterAurapport(textajouter + "\n") 
+    elif elem == "/var/log":
+        description = c.description_varlog
+        textajouter = c.titre_description
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_description + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = description
+        ajouterAurapport(textajouter + "\n") 
+    elif elem == "/var/log/audit":
+        description = c.description_varlogaudit
+        textajouter = c.titre_description
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_description + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = description
+        ajouterAurapport(textajouter + "\n") 
+    elif elem == "/home":
+        description = c.description_home
+        textajouter = c.titre_description
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_description + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = description
+        ajouterAurapport(textajouter + "\n") 
 
 ########### Processus de réalisation des différnts tests sur le vardir ##########
 
@@ -166,6 +219,11 @@ def verif_sys_vfat(point_test_vfat):
             ajouterAurapport(textajouter)
             textajouter = c.point + "\n \n"
             ajouterAurapport(textajouter)
+            ajout_description(elem)
+            textajouter = c.titre_result_test + "\n"
+            ajouterAurapport(textajouter)
+            textajouter = c.uderline_result + "\n"
+            ajouterAurapport(textajouter)
             textajouter = "\t" + c.com_rub_vfat0 + elem + "\n"
             ajouterAurapport(textajouter)
             print(c.titre_rub_vfat + elem)
@@ -177,6 +235,11 @@ def verif_sys_vfat(point_test_vfat):
             textajouter = c.titre_rub_vfat + elem + "\n"
             ajouterAurapport(textajouter)
             textajouter = c.point + "\n \n"
+            ajouterAurapport(textajouter)
+            ajout_description(elem)
+            textajouter = c.titre_result_test + "\n"
+            ajouterAurapport(textajouter)
+            textajouter = c.uderline_result + "\n"
             ajouterAurapport(textajouter)
             textajouter = "\t" + c.com_rub_vfat1 + elem + "\n"
             ajouterAurapport(textajouter)
@@ -195,13 +258,18 @@ def test_vardir(point_test_vardir):
             ajouterAurapport(textajouter)
             textajouter = c.point + "\n \n"
             ajouterAurapport(textajouter)
+            ajout_description(elem)
+            textajouter = c.titre_result_test + "\n"
+            ajouterAurapport(textajouter)
+            textajouter = c.uderline_result + "\n"
+            ajouterAurapport(textajouter)
             textajouter = "\t" + elem + c.com_rub_vardir0 + "\n"
             ajouterAurapport(textajouter)
-            textajouter = "\t" + c.com_rub_vardir1 + elem + "\n"
+            textajouter = "\t" + c.com_rub_vardir1 + elem + "\n \n"
             ajouterAurapport(textajouter)
-            textajouter = "\t" + c.titre_remediation + elem + "\n"
+            textajouter = "\t" + c.titre_recommandation
             ajouterAurapport(textajouter)
-            textajouter = "\t" + c.point + "\n \n"
+            textajouter = "\t" + c.uderline_recommandation + "\n"
             ajouterAurapport(textajouter)
             textajouter = "\t" + elem + c.com_rub_vardir_rec0 + "\n"
             ajouterAurapport(textajouter)
@@ -218,6 +286,11 @@ def test_vardir(point_test_vardir):
                 ajouterAurapport(textajouter)
                 textajouter = c.point + "\n \n"
                 ajouterAurapport(textajouter)
+                ajout_description(elem)
+                textajouter = c.titre_result_test + "\n"
+                ajouterAurapport(textajouter)
+                textajouter = c.uderline_result + "\n"
+                ajouterAurapport(textajouter)
                 textajouter = "\t" + elem + c.com_rub_vardir_rec1 + elem + "\n"
                 ajouterAurapport(textajouter)
                 print(f"\t {elem} {c.com_rub_vardir1} \t \t \t \t {Style.BRIGHT} [ {Fore.RED}{elem_upper} EXPOSE{Style.RESET_ALL}{Style.BRIGHT} ]{Style.RESET_ALL}")
@@ -230,6 +303,11 @@ def test_vardir(point_test_vardir):
                 textajouter = c.titre_rub_vardir + elem + "\n"
                 ajouterAurapport(textajouter)
                 textajouter = c.point + "\n \n"
+                ajouterAurapport(textajouter)
+                ajout_description(elem)
+                textajouter = c.titre_result_test + "\n"
+                ajouterAurapport(textajouter)
+                textajouter = c.uderline_result + "\n"
                 ajouterAurapport(textajouter)
                 textajouter = "\t" + elem + c.com_rub_vardir_rec1 + elem + "\n"
                 ajouterAurapport(textajouter)
@@ -250,13 +328,18 @@ def verif_home():
             ajouterAurapport(textajouter)
             textajouter = c.point + "\n \n"
             ajouterAurapport(textajouter)
+            ajout_description(elem)
+            textajouter = c.titre_result_test + "\n"
+            ajouterAurapport(textajouter)
+            textajouter = c.uderline_result + "\n"
+            ajouterAurapport(textajouter)
             textajouter = "\t" + elem + c.com_rub_home0 + "\n"
             ajouterAurapport(textajouter)
-            textajouter = "\t" + c.com_rub_home1 + elem + "\n"
+            textajouter = "\t" + c.com_rub_home1 + elem + "\n \n"
             ajouterAurapport(textajouter)
-            textajouter = "\t" + c.titre_remediation + elem + "\n"
+            textajouter = "\t" + c.titre_recommandation
             ajouterAurapport(textajouter)
-            textajouter = "\t" + c.point + "\n \n"
+            textajouter = "\t" + c.uderline_recommandation + "\n"
             ajouterAurapport(textajouter)
             textajouter = "\t" + elem + c.com_rub_home_rec0 + "\n"
             ajouterAurapport(textajouter)
@@ -272,7 +355,11 @@ def verif_home():
             ajouterAurapport(textajouter)
             textajouter = c.point + "\n \n"
             ajouterAurapport(textajouter)
-            textajouter = "\t" + c.com_rub_home2 + elem + "\n"
+            textajouter = c.titre_result_test + "\n"
+            ajouterAurapport(textajouter)
+            textajouter = c.uderline_result + "\n"
+            ajouterAurapport(textajouter)
+            textajouter = "\t" + c.com_rub_home2 + elem + "\n \n"
             ajouterAurapport(textajouter)
             print(c.titre_rub_home1 + elem)
             print(c.titre_rub_sticky_bit + c.sticky)
@@ -283,6 +370,10 @@ def verif_home():
             textajouter = c.titre_rub_sticky_bit + c.sticky + "\n"
             ajouterAurapport(textajouter)
             textajouter = c.point + "\n \n"
+            ajouterAurapport(textajouter)
+            textajouter = c.titre_result_test + "\n"
+            ajouterAurapport(textajouter)
+            textajouter = c.uderline_result + "\n"
             ajouterAurapport(textajouter)
             textajouter = "\t" + c.com_rub_sticky_bit1 + "\n"
             ajouterAurapport(textajouter)
