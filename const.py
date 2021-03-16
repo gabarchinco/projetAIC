@@ -1,4 +1,4 @@
-### Variables constantes
+################### Variables constantes ###################
 
 point_test = ["cramfs", "freevxfs", "jffs2", "hfs", "hfsplus", "udf", "squashfs"]
 point_test_vfat = ["vfat"]
@@ -8,13 +8,13 @@ sticky = "sticky bit"
 bootloader = "/boot/grub/grub.cfg"
 dev_shm = "/dev/shm"
 
-################### Les fichiers temporaires ##########################
+################### Les fichiers temporaires ###################
 
 fichierContenu = "contenu.txt"
 fichierRapport = "rapport.txt"
 rep__pycache__ = "__pycache__"
 
-### Context d'application 
+################### Context d'application ###################
 
 context = "Context"
 first_page = '''Ce rapport d'audit est automatiquement généré suite au lancement du programme CheckPoint.py . Il est conçu afin d'aider à la mise en place de configuration sécurisé respectant au mieux les recommandations du CIS. 
@@ -30,7 +30,7 @@ Le test réalisé est indiqué par un titre commençant par l'indication [+]. Il
 Toutefois, les résultats des tests doivent être analysés dans le contexte global de votre système et de la politique de sécurité mise en place par votre entité. Ensuite, il doivent être analyser par point de référencement afin d'appliquer les recommandations de sécurité qui sont nécéssaires aux exigences de votre environne
 '''
 
-### Titre des rubriques des différents tests
+################### Titre des rubriques des différents tests ###################
 
 titre_rub_file_sys = " \n [+] Test sur la désactivation du sytème de fichier "
 titre_rub_vfat = "\n [+] Test sur le montage du système de fichier "
@@ -45,7 +45,7 @@ titre_rub_dev_shm = "\n [+] Test des options sur /dev/shm."
 titre_rub_bootloader_pass = "\n [+] Test sur la configuration du mot de passe bootloader "
 point = "################################################"
 
-### Résultats des tests
+################### Résultats des tests ###################
 
 titre_result_test = "Résultat de test"
 uderline_result = "----------------------"
@@ -71,7 +71,8 @@ com_rub_bootloader_pass0 = "Test réussi sur la configuration du mot de passe bo
 com_rub_bootloader_pass1 = "Il y a un risque potentiel sur la configuration du mot de passe bootloader "
 
 
-### Descriptions
+#################### Descriptions ###################
+
 titre_description = "Description \n"
 uderline_description = "---------------"
 
@@ -117,10 +118,54 @@ description_varlogaudit = """Le démon d'audit, auditd, stocke les données de j
 description_home = """Le répertoire /home est utilisé pour prendre en charge les besoins de stockage sur disque des utilisateurs locaux.
 """
 
-### Récommandations sur les tests
+#################### Récommandations sur les tests ####################
 
 titre_recommandation = "Recommandations \n"
 uderline_recommandation = "-------------------------"
+
+recommandation_cramfs = """La suppression de la prise en charge des types de systèmes de fichier non utilisés réduit la surface d'attaque locale du serveur. Si ce type de système de fichier n'est pas nécessaire, désactivez-le.
+""" 
+
+recommandation_freevxfs = """La suppression de la prise en charge des types de systèmes de fichier non utilisé réduit la surface d'attaque locale du serveur. Si ce type de système de fichier n'est pas nécessaire, désactivez-le.
+""" 
+
+recommandation_jffs2 = """La suppression de la prise en charge des types de systèmes de fichier non utilisés réduit la surface d'attaque locale du serveur. Si ce type de système de fichier n'est pas nécessaire, désactivez-le.
+"""
+
+recommandation_hfs = """La suppression de la prise en charge des types de système de fichier non utilisés réduit la surface d'attaque locale du serveur. Si ce type de système de fichier n'est pas nécessaire, désactivez-le.
+"""
+
+recommandation_hfsplus = """La suppression de la prise en charge des types de système de fichier non utilisés réduit la surface d'attaque locale du serveur. Si ce type de système de fichier n'est pas nécessaire, désactivez-le.
+"""
+
+recommandation_udf = """La suppression de la prise en charge des types de système de fichier non utilisés réduit la surface d'attaque locale du serveur. Si ce type de système de fichier n'est pas nécessaire, désactivez-le.
+"""
+
+recommandation_squashfs = """La suppression de la prise en charge des types de système de fichier non utilisés réduit la surface d'attaque locale du serveur. Si ce type de système de fichier n'est pas nécessaire, désactivez-le.
+"""
+
+recommandation_vfat = """La suppression de la prise en charge des types de système de fichier non utilisés réduit la surface d'attaque locale du serveur. Si ce type de système de fichier n'est pas nécessaire, désactivez-le.
+"""
+
+recommandation_tmp = """Le répertoire /tmp est un répertoire accessible en écriture par tous utilisé pour le stockage temporaire par tous les utilisateurs et certaines applications.
+"""
+
+recommandation_var = """Le répertoire /var est utilisé par les démons et autres services système pour stocker temporairement des données dynamiques. Certains répertoires créés par ces processus peuvent être inscriptibles par tous.
+"""
+
+recommandation_vartmp = """Le répertoire /var/tmp est un répertoire accessible en écriture par tous utilisé pour le stockage temporaire par tous les utilisateurs et certaines applications.
+"""
+
+recommandation_varlog = """Le répertoire /var/log est utilisé par les services système pour stocker les données de journalisation.
+"""
+
+recommandation_varlogaudit = """Le démon d'audit, auditd, stocke les données de journalisation dans le répertoire /var/log/ audit.
+"""
+
+recommandation_home = """Le répertoire /home est utilisé pour prendre en charge les besoins de stockage sur disque des utilisateurs locaux.
+"""
+
+
 com_rub_vardir_rec0 = " doit être monter dans le fichier /etc/fstab avec ces options : defaults,rw,nosuid,nodev,noexec,relatime 0 0"
 com_rub_home_rec0 = " doit être monter dans le fichier /etc/fstab avec ces options : /home type ext4 (rw,nodev,relatime,data=ordered)"
 com_rub_bootloader_rec = " doit être monter avec ces options : Access: (0400/-r--------) Uid: (0/ root) Gid: ( 0/ root)"

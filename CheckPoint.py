@@ -1,9 +1,8 @@
 ### Importer les modules nécessaires
 
 import os
-# import os.path
-import subprocess
 import sys
+import subprocess
 import shutil
 
 from colorama import Fore
@@ -165,6 +164,86 @@ def ajout_description(elem):
         textajouter = description
         ajouterAurapport(textajouter + "\n") 
 
+################### Ajout recommandation ###################
+
+def ajout_recommandation(elem):
+    if elem == "cramfs":
+        recommandtion = c.recommandation_cramfs
+        textajouter = c.titre_recommandation
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_recommandation + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = recommandtion
+        ajouterAurapport(textajouter + "\n")
+    elif elem == "freevxfs":
+        recommandtion = c.recommandation_freevxfs
+        textajouter = c.titre_recommandation
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_recommandation + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = recommandtion
+        ajouterAurapport(textajouter + "\n")
+    elif elem == "jffs2":
+        recommandtion = c.recommandation_jffs2
+        textajouter = c.titre_recommandation
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_recommandation + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = recommandtion
+        ajouterAurapport(textajouter + "\n")
+    elif elem == "hfs":
+        recommandtion = c.recommandation_hfs
+        textajouter = c.titre_recommandation
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_recommandation + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = recommandtion
+        ajouterAurapport(textajouter + "\n")
+    elif elem == "hfsplus":
+        recommandtion = c.recommandation_hfsplus
+        textajouter = c.titre_recommandation
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_recommandation + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = recommandtion
+        ajouterAurapport(textajouter + "\n")
+    elif elem == "udf":
+        recommandtion = c.recommandation_udf
+        textajouter = c.titre_recommandation
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_recommandation + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = recommandtion
+        ajouterAurapport(textajouter + "\n")
+    elif elem == "squashfs":
+        recommandtion = c.recommandation_squashfs
+        textajouter = c.titre_recommandation
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_recommandation + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = recommandtion
+        ajouterAurapport(textajouter + "\n")
+    elif elem == "vfat":
+        recommandtion = c.recommandation_vfat
+        textajouter = c.titre_recommandation
+        ajouterAurapport(textajouter)
+        textajouter = c.uderline_recommandation + "\n"
+        ajouterAurapport(textajouter)
+        textajouter = recommandtion
+        ajouterAurapport(textajouter + "\n")
+    elif elem == "/tmp":
+        pass  
+    elif elem == "/var":
+        pass
+    elif elem == "/var/tmp":
+        pass
+    elif elem == "/var/log":
+        pass
+    elif elem == "/var/log/audit":
+        pass
+    elif elem == "/home":
+        pass
+
 ########### Processus de réalisation des différnts tests sur le vardir ##########
 
 ## Vérifier que le montage des systèmes de fichier non utilisés soit désactivé.
@@ -186,8 +265,9 @@ def verif_sys_fichier(point_test):
             ajouterAurapport(textajouter)
             textajouter = c.uderline_result + "\n"
             ajouterAurapport(textajouter)
-            textajouter = "\t" + c.com_rub_file_sys0 + elem + "\n"
+            textajouter = "\t" + c.com_rub_file_sys0 + elem + "\n \n"
             ajouterAurapport(textajouter)
+            ajout_recommandation(elem)
             print(c.titre_rub_file_sys + elem )
             print(c.point)
             print()
@@ -202,8 +282,9 @@ def verif_sys_fichier(point_test):
             ajouterAurapport(textajouter)
             textajouter = c.uderline_result + "\n"
             ajouterAurapport(textajouter)
-            textajouter = "\t" + c.com_rub_file_sys2 + elem + "\n"
+            textajouter = "\t" + c.com_rub_file_sys2 + elem + "\n \n"
             ajouterAurapport(textajouter)
+            ajout_recommandation(elem)
             print(c.titre_rub_file_sys + elem )
             print(c.point)
             print()
