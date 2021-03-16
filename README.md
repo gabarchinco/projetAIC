@@ -22,12 +22,14 @@ L'analyse effectué par le script inclut celles sur les types de systèmes de fi
 
 Ce script est codé en python, sa présence est donc prérequis afin de pouvoir utiliser ce programme. Il faudra aussi importer les modules nécéssaires.
 
+  La version de python
   * python3
-  * module sys
-  * module shutil
+
+  Les modules nécessaires
   * module os
-  * module os.path
+  * module sys
   * module suprocess
+  * module shutil
   * module colorama
   * module textwrap
   * module fpdf
