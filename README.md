@@ -23,12 +23,17 @@ L'analyse effectué par le script inclut celles sur les types de systèmes de fi
 Ce script est codé en python, sa présence est donc prérequis afin de pouvoir utiliser ce programme. Il faudra aussi importer les modules nécéssaires.
 
   La version de python
-  * python3
+  * La version requis de python3.8.5 
+  * Test effectuer avec la version 3.8.5
 
-  Les modules nécessaires
+  Les modules nécessaires à installer
+  * module colorama
+  * module fpdf
+  
+  Les modules nécessaires à importer
   * module os
   * module sys
-  * module suprocess
+  * module subprocess
   * module shutil
   * module colorama
   * module textwrap
